@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Fredoka",cursive; /*text font*/
+    background-image: linear-gradient(to right,#e22685,#37c8cd); /*background color*/
+    color: white;   /*font color*/
+}
+.container{
+    /*border: 1px solid black;*/
+    width: 95%;
+    margin: auto;/*to place container in center*/
+}
+.nav{
+    display: flex; /*to display flexiblelly*/
+    justify-content: space-between; /*to give space between to do list and insert box*/
+    flex-wrap: wrap;/*to make responsive*/
+    width: 100%;
+    margin: 25px 0;/*top&bottom-25px left&right-0*/
+}
+.nav h2{
+    font-size: 2rem;
+}
+
+.user-input{
+    /*border: 1px solid black;*/
+    width: 380px;
+    text-align: center;/*to place input box in center of container*/
+}
+.user-input input{
+    width: 80%;/*width of input box 80% of 350px*/
+    outline: none;
+    padding: 8px;
+    border: 1px solid lightgrey;/*color of input and submit button*/
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.user-input input:focus{ /*focus effect while giving input*/
+    box-shadow: 0 0 5px #e22865;
+    border: 1px solid #e22865; /*to make the focus bit more*/
+}
+.user-input button{
+    cursor: pointer;/*to give hand effect when we hover on button*/
+    padding: 8px;
+    width: fit-content;
+    transition: 1s;/*to make the visibility for bit longer*/
+    outline: none;
+    background-color: lightgrey;
+    border:1px solid lightgrey;
+    border-top-right-radius:5px ;
+    border-bottom-right-radius:5px ;
+}
+
+.user-input button:hover{
+    background-color: transparent;
+    color: white;
+}
+
+.to-do-items{
+    width: 500px;
+    margin: auto;
+}
+
+.item{
+    background-color: white;
+    display: flex;/*flexibility view after items added*/
+    justify-content: space-between;
+    width: 100%;
+    height: auto;/*if text is long to fit in correct view*/
+    border-radius: 2px;
+    padding: 16px;
+    color: #454545;
+    margin-top: 10px;
+    font-size: 1rem;
+    text-transform: uppercase;
+
+}
+
+.item:hover{
+    box-shadow: 0 0 20px #e22865;
+    border: 1px solid #e22865;
+}
+
+.item i{
+    cursor:pointer; /*for add and delete cursor pointer*/
+    margin: 0 5px;
+}
+/*media queries are used to create a responsive web page*/
+@media(max-width:768px){ /*desktop*/
+    .nav{
+        align-items: center;
+        flex-direction: column;
+    }
+    .nav h2{
+        margin: 10px 0;
+    }
+
+    .user-input{
+        width: 100%;
+    }
+
+    .to-do-items{
+        width: 100%;
+    }
+}
+
+@media(max-width:480px){/*tablet*/
+    .user-input input{
+        width:74%;
+    }
+}
+
+@media(max-width:320px){/*mobile*/
+    .user-input input{
+        width:60%;
+    }
+}
