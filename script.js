@@ -14,27 +14,36 @@ function addItem(){
     var trashIcon = document.createElement("i");
 
     divParent.className = "item";
-    divParent.innerHTML = '<div>'+input.value+'</div>';
+    var store = input.value
+    if(store == "")
+    {
+        alert("enter a event");
+    }
+    else
+    {
+        divParent.innerHTML = '<div>'+store+'</div>';
 
-    checkIcon.className = "fas fa-check-square";//create check icon
-    checkIcon.style.color = "lightgray";
-    checkIcon.addEventListener("click",function(){
-        checkIcon.style.color = "limegreen";//green color on clicking the icon
-    })
+        checkIcon.className = "fas fa-check-square";//create check icon
+        checkIcon.style.color = "lightgray";
+        checkIcon.addEventListener("click",function(){
+            checkIcon.style.color = "limegreen";//green color on clicking the icon
+        })
 
-    divChild.appendChild(checkIcon);//checkicon added to child div
+        divChild.appendChild(checkIcon);//checkicon added to child div
 
-    trashIcon.className = "fas fa-trash";//create a trash icon
-    trashIcon.style.color = "darkgray";
-    trashIcon.addEventListener("click",function(){
-        divParent.remove();//remove item on clicking the icon
-    })
+        trashIcon.className = "fas fa-trash";//create a trash icon
+        trashIcon.style.color = "darkgray";
+        trashIcon.addEventListener("click",function(){
+            divParent.remove();//remove item on clicking the icon
 
-    divChild.appendChild(trashIcon);//trash icon added to child div
+        })
 
-    divParent.appendChild(divChild);//whole child div is added into parent div
+        divChild.appendChild(trashIcon);//trash icon added to child div
 
-    toDoItems.appendChild(divParent);//the added item div is placed inside main to-do-list container
+        divParent.appendChild(divChild);//whole child div is added into parent div
 
-    input.value = '';//clear the input field
+        toDoItems.appendChild(divParent);//the added item div is placed inside main to-do-list container
+
+        input.value = '';//clear the input field
+    }
 }
